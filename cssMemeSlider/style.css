@@ -1,22 +1,50 @@
 body {
     background: #25282A;
     color: #fff;
-    font-family: 'Forum', cursive;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Caveat', cursive;
 }
 
-.slider {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
+.slider-container {
+    max-width: 700px;
+  }
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+}  
+
+.slider-image {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
     background-color: #fff;
     border-radius: 10px;
+}
+
+.slider-dots {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+
+.slider-dot {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.slider-title {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 400;
+
 }
