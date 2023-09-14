@@ -1,0 +1,12 @@
+body {
+    background: #25282A;
+    color: #fff;
+    font-family: 'Forum', cursive;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
