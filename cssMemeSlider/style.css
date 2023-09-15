@@ -1,3 +1,8 @@
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
 body {
     background: #25282A;
     color: #fff;
@@ -10,7 +15,7 @@ body {
 }
 
 .slider-container {
-    max-width: 50em;
+    max-width: 46.875em;
     padding-left: 1.25em;
     padding-right: 1.25em;
 }
@@ -22,9 +27,24 @@ body {
     padding-bottom: 0.625em;
 }
 
+.img-container {
+    display: flex;
+    overflow: hidden;
+    max-width: 46.875em;
+    border-radius: 0.625em;
+  }
+
+.imgs {
+    display: flex;
+    flex-direction: row;
+    max-width: 46.875em;
+    transition: transform 0.5s ease;
+   }
+
+
 .slider-image {
-    max-width: 50em;
     width: 100%;
+    margin-right:1.25em ;
     height: auto;
     background-color: #fff;
     border-radius: 0.625em;
@@ -33,21 +53,52 @@ body {
 .slider-dots {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-  }
+    align-items: center; 
+ }
+
+.slider-dot-box {
+    display: flex;
+    height: 1.875em;
+    width: 1.25em;
+    background-color: #25282A;
+     cursor: pointer;
+     align-items: center;
+     justify-content: center;
+}
 
 .slider-dot {
-    margin: 0.625em  0.312em;
-    width: 0.625em;
-    height: 0.625em;
+    width: 0.485em;
+    height: 0.485em;
     background-color: #fff;
     border-radius: 50%;
+    transition: background-color 0.5s, border 0.5s; 
+    border: 0.14em solid transparent;
 }
+
+.slider-dot-box:hover .slider-dot {
+    background-color: transparent;
+    border: 0.14em solid #fff; 
+}
+
+.slider-dot-box.active .slider-dot {
+    background-color: transparent;
+    border: 0.14em solid #fff; 
+}
+
 
 .slider-title {
     margin: 0;
     font-size: 1.5em;
     font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+
+.slider-title.active {
+    opacity: 1;
+    display: block;
 }
 
 @media (max-width: 500px) {
@@ -57,6 +108,5 @@ body {
     }
     .slider-dots {
         align-self: center;
-        padding-bottom: 0.625em;
     }
 }
