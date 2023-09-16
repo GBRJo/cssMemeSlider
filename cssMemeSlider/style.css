@@ -16,15 +16,13 @@ body {
 
 .slider-container {
     max-width: 46.875em;
-    padding-left: 1.25em;
-    padding-right: 1.25em;
+    padding: 0 1.25em;
 }
 
 .comment {
     display: flex;
     justify-content: space-between;
-    padding-top: 0.625em;
-    padding-bottom: 0.625em;
+    padding: 0.625em 0;
 }
 
 .img-container {
@@ -32,19 +30,18 @@ body {
     overflow: hidden;
     max-width: 46.875em;
     border-radius: 0.625em;
-  }
+}
 
 .imgs {
     display: flex;
     flex-direction: row;
     max-width: 46.875em;
-    transition: transform 0.5s ease;
-   }
-
+    transition: transform 0.8s ease;
+}
 
 .slider-image {
     width: 100%;
-    margin-right:1.25em ;
+    margin-right: 1.25em;
     height: auto;
     background-color: #fff;
     border-radius: 0.625em;
@@ -54,16 +51,16 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center; 
- }
+}
 
 .slider-dot-box {
     display: flex;
     height: 1.875em;
     width: 1.25em;
     background-color: #25282A;
-     cursor: pointer;
-     align-items: center;
-     justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 .slider-dot {
@@ -71,33 +68,55 @@ body {
     height: 0.485em;
     background-color: #fff;
     border-radius: 50%;
-    transition: background-color 0.5s, border 0.5s; 
+    transition: background-color 0.8s, border 0.8s; 
     border: 0.14em solid transparent;
 }
 
-.slider-dot-box:hover .slider-dot {
-    background-color: transparent;
-    border: 0.14em solid #fff; 
-}
-
+.slider-dot-box:hover .slider-dot,
 .slider-dot-box.active .slider-dot {
     background-color: transparent;
     border: 0.14em solid #fff; 
 }
 
-
-.slider-title {
+.title {
     margin: 0;
     font-size: 1.5em;
     font-weight: 400;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out forwards, moveX 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveX {
+    0% {
+        transform: translateX(100px); /* начальное смещение по X */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* конечное смещение по X (без смещения) */
+        opacity: 1;
+    }
+}
+
+.title.active {
+    opacity: 1;
+   
+}
+
+.slider-title {  
     display: none;
 }
 
 .slider-title.active {
-    opacity: 1;
     display: block;
 }
 
