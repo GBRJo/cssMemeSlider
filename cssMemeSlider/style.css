@@ -98,11 +98,11 @@ body {
 
 @keyframes moveX {
     0% {
-        transform: translateX(100px); /* начальное смещение по X */
+        transform: translateX(100px);
         opacity: 0;
     }
     100% {
-        transform: translateX(0); /* конечное смещение по X (без смещения) */
+        transform: translateX(0);
         opacity: 1;
     }
 }
